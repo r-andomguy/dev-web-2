@@ -6,7 +6,6 @@
 ## Inicialização do Projeto
 
 ```sh
-npm create vite@latest
 # React/Typescript + swc
 cd <project-name>
 npm install
