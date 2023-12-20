@@ -1,0 +1,134 @@
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+body {
+  background-color: #3f8880;
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+  color: white;
+}
+
+.pending {
+  &::before {
+    font-family: "Material Symbols Outlined";
+    content: "autorenew";
+    font-size: 25px;
+    color: #f1c40f;
+    animation: spin 2s linear infinite;
+  }
+}
+
+.synced {
+  &::before {
+    font-family: "Material Symbols Outlined";
+    content: "check_circle";
+    font-size: 25px;
+    color: #08d15c;
+  }
+}
+
+.error {
+  &::before {
+    font-family: "Material Symbols Outlined";
+    content: "error";
+    color: #e74c3c;
+  }
+}
+
+.input-action {
+  width: 50%;
+}
+
+ul,
+li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+li {
+  display: flex;
+  gap: .25rem;
+  align-items: center;
+  margin: 1rem;
+
+  & input {
+    flex-grow: 1;
+  }
+}
+
+.input-action,
+li > * {
+  font-size: 1rem;
+  padding: .2rem 1rem;
+  background-color: white;
+  border-radius: 8px;
+  color: black;
+  padding: 0.5rem;
+  border: 1px solid rgba(0 0 0 / .5);
+  position: relative;
+  overflow: hidden;
+}
+
+.div{
+  display: grid;
+  width: 90%;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  row-gap: 0.5rem;
+  justify-items: center;
+}
+
+.mainDiv {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mainDiv > #list {
+  margin-top: 8px;
+}
+
+.listInput {
+  text-align: center;
+}
+
+li > span {
+  min-width: 250px;
+}
+
+li button {
+  cursor: pointer;
+  background-color: #a71504;
+  color: white;
+  font-weight: 600;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    background-color: rgba(0 0 0 / .05);
+    transition: .3s ease-in-out;
+    transform: translateY(100%);
+  }
+
+  &:hover {
+    &::before {
+      transform: translateY(0);
+    }
+  }
+}
