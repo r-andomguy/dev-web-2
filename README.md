@@ -16,3 +16,8 @@ npm install
 ```sh
 npm run dev
 ```
+
+## Novos recursos
+
+- Adiciona data de início e fim para cada item
+- Possibilidade de editar campos
